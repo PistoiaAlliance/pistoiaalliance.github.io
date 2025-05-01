@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : Blobs and CHEM{*}</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Best-Practices_741670948.html">HELM Best Practices</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : Blobs and CHEM{*}
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span>, last modified on Jan 30, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>HELM has two ways to describe material whose composition is unknown .</p><p><br/></p><p>You can use the CHEM polymer type:</p><p style="margin-left: 30.0px;">CHEM1{*}$$$$V2.0</p><p><br/></p><p>Or the blob</p><p style="margin-left: 30.0px;">BLOB1{Bead}$$$$V2.0</p><p><br/></p><p>The HELM specification does not constrain your choice, so it is worth comparing the two.</p><p><br/></p><p><strong> </strong></p><p><strong> </strong></p><p><strong>Concepts</strong></p><p><br/></p><p>CHEM monomers are intended to be an organic small molecules where the structure does not conform to any of the defined polymer types. It is there to cover drug antibody conjugates and similar situations.</p><p><br/></p><p>When the CHEM monomer is entirely unknown, you can use * to represent it, however the expectation is that it is still an organic small(ish) molecule.</p><p><br/></p><p>BLOBS are used for particles where the material involved is less organic, for example a metal like gold or a non-biological polymer such as polystyrene. A blob is often a material with a biopolymer adhered to it but can be anything large, including a short-hand (non-structure containing) way of adding a whole antibody to a structure. </p><p><br/></p><p>Key to the blob type is the name and annotation. The HELM tools have two default types: ‘Bead’ and ‘Gold Particle’, but these can be extended on request. The vocabulary is constrained by the tools and the description is very clear in the HELM string.</p><p><br/></p><p><br/></p><p><strong>Annotation</strong></p><p><br/></p><p>Both CHEM{*} and BLOB can be annotated either in the first or third section of the HELM string. First section annotations are immediately after the monomer. The Blob has a type as well as the annotation.</p><p><br/></p><p style="margin-left: 30.0px;">BLOB1{Bead}&quot;Annotation&quot;$$$$V2.0</p><p style="margin-left: 30.0px;">CHEM1{*&quot;Annotation&quot;}$$$$V2.0</p><p><br/></p><p>A BLOB is not a monomer, so it is not possible to annotate within the {}s. A CHEM{*} can be annotated either as a monomer within the brackets or afterwards like the BLOB notation above. In practice these amount to the same thing, but the display will be slightly different.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/960987194/960823336.png" data-image-src="attachments/960987194/960823336.png" data-unresolved-comment-count="0" data-linked-resource-id="960823336" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-11-21_15-49-59.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="960987194" data-linked-resource-container-version="2" data-media-id="21707c4d-321d-4730-8861-acc664cc94cc" data-media-type="file"></span></p><p>CHEM1{*&quot;Annotation&quot;}$$$$V2.0</p><p><br/></p><p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/960987194/960823342.png" data-image-src="attachments/960987194/960823342.png" data-unresolved-comment-count="0" data-linked-resource-id="960823342" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-11-21_15-50-23.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="960987194" data-linked-resource-container-version="2" data-media-id="cde22c3b-3b94-45f0-9fe0-18dc7f20940e" data-media-type="file"></span></p><p>CHEM1{*}&quot;Annotation&quot;$$$$V2.0</p><p><br/></p><p>First section annotations should be simple and fairly short and apply to a specific part of the molecule. If you want to add complex, structured information to the whole polymer, use the third section annotation. You can include information in JSON format in the third section, so it provides considerable scope for expansion.</p><p><br/></p><p>PEPTIDE1{C.C.C.C.C.C}|BLOB1{Gold Particle}”Au10, Diameter:10nm”</p><p>$PEPTIDE,BLOB1,C:R3‑?:?</p><p>$G1(PEPTIDE1:20-34+BLOB1)</p><p>${“Name”:”Gold particle conjugated with peptides”,”Load”:26}$</p><p><br/></p><p><br/></p><p><br/></p><p><strong>Connection</strong></p><p><br/></p><p>Since the structure is unknown the connection must also be unknown. Therefore, neither a BLOB or a CHEM{*} can have numbered R groups. The monomer itself can be numbered, although a blob will always have the number 1, but the R group cannot be defined since there is no known monomer structure to connect it to.</p><p><br/></p><p>So, this is not allowed:</p><p style="margin-left: 30.0px;">BLOB1{Bead}|PEPTIDE1{A.G.T}$BLOB1,PEPTIDE1,<strong>1:R1</strong>-?:?$$$V2.0</p><p><br/></p><p>But this is fine:</p><p style="margin-left: 30.0px;">BLOB1{Bead}|PEPTIDE1{A.G.T}$BLOB1,PEPTIDE1,<strong>1:?</strong>-?:?$$$V2.0</p><p><br/></p><p><br/></p><p><strong>Brackets</strong></p><p><br/></p><p>You can't have CHEMs or BLOBs inside brackets.</p><p><br/></p><p>If you only have the CHEM or BLOB inside the bracket, you don't know how it is connected to itself.</p><p>If it is connected to anything else then you have more than one simple polymer. You cannot define repeating groups across multiple simple polymers.</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><strong>Summary</strong></p><p>Blobs and CHEM{*} behave in a similar way, but they are used in different contexts. The project is interested in extending the blob name vocabulary, so please let us know if you have any suggestions.</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/960987194/960823336.png">image2018-11-21_15-49-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/960987194/960823342.png">image2018-11-21_15-50-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/960987194/1004011619.png">CHEMinside brackets.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

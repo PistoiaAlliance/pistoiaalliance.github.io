@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : Changing the direction of backbone connections</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Best-Practices_741670948.html">HELM Best Practices</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : Changing the direction of backbone connections
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span> on Mar 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>HELM is a directional notation. For example, in RNA sequences the start of the chain is the 5’ end of the polymer and the end is the 3’ end.</p><p> </p><p style="text-align: center;">RNA1{R(C)P.R(A)}$$$$V2.0</p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" loading="lazy" src="attachments/2364801057/2360442957.png" data-image-src="attachments/2364801057/2360442957.png" data-height="147" data-width="218" data-unresolved-comment-count="0" data-linked-resource-id="2360442957" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210310-175754.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2364801057" data-linked-resource-container-version="1" data-media-id="c0d92f44-1689-4419-bea6-826bc324eceb" data-media-type="file"></span><p /><p>This is encoded by the definition of the backbone connection.  R1 is connected to R2</p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" loading="lazy" src="attachments/2364801057/2365292556.png" data-image-src="attachments/2364801057/2365292556.png" data-height="485" data-width="1726" data-unresolved-comment-count="0" data-linked-resource-id="2365292556" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210310-180025.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2364801057" data-linked-resource-container-version="1" data-media-id="1567c518-6130-4ead-ac19-360159710d2c" data-media-type="file"></span><p /><p> </p><p>However, there are times where the molecule you want to encode has a different backbone configuration, for example when the connection is reversed.</p><p> </p><p>There are 2 options:</p><ol><li><p>Create a manually defined connection between different simple polymers.</p></li><li><p>Define a new monomer with the R group numbers changed to reflect your desired connection points.</p></li></ol><p> </p><p>We recommend option 2.</p><p> </p><p>If you use option 1, the original monomer, the HELM string would look like this:</p><p>RNA1{P}|RNA2{R(C)}|RNA3{R(A)}$RNA1,RNA3,1:R2-1:R1|RNA1,RNA2,1:R1-1:R1$$$V2.0</p><p>It would take the user longer to construct using the available editing tools and is more prone to error. We don’t recommend this approach.</p><p> </p><p><strong>Creating a reversed connection using a new monomer</strong></p><p>To reverse the connection in the example above, the user should define the monomer with the R1 and R2 groups swopped over. So, a reversed ribose monomer would look like this:</p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" loading="lazy" src="attachments/2364801057/2360475681.png" data-image-src="attachments/2364801057/2360475681.png" data-height="113" data-width="230" data-unresolved-comment-count="0" data-linked-resource-id="2360475681" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210310-180058.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2364801057" data-linked-resource-container-version="1" data-media-id="918ea66d-9b0c-4507-a890-6cd8cd787f83" data-media-type="file"></span><p> </p><p>The guidelines define monomers where the capped structure is the same, but the connection points differ as different monomer, so both forms can be stored in a monomer library.</p><p>We also recommend that the monomer is named with the connection as a prefix to the monomer symbol so, in this case R becomes [35R] to show that it is now 3,5 connectivity.</p><p>Other common sugars would be numbered in a similar way:</p><p>               R              -&gt; [35R]</p><p>               [dR]       -&gt; [35dR]</p><p>               [mR]      -&gt; [35mR]</p><p>               [fR]        -&gt; [35fR]</p><p> </p><p>So our original example becomes RNA1{[35R](C)P.[35R](A)}$$$$V2.0, the connection is reversed and the 5’ end is now on the right.</p><p> </p><p><strong>Canonicalization recommendations</strong></p><p>If you reverse the whole of a simple polymer then you have a chain that could also be represented using standard monomers, just connected in the opposite order. For example:</p><p>RNA1{[35R](C)P.[35R](A)}$$$$V2.0          is the same as                    RNA1{R(A)P.R(C)}$$$$V2</p><p>We recommend that reversed monomers are only used where there is no alternative. In practice this will be when a sequence contains a combination of both forward and reverse sugars.</p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2364801057/2360442957.png">image-20210310-175754.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2364801057/2365292556.png">image-20210310-180025.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2364801057/2360475681.png">image-20210310-180058.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

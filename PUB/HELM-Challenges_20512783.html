@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : HELM Challenges</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : HELM Challenges
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span>, last modified on Mar 06, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The HELM team have identified discrete pieces of development work that are important to the project, but do not currently figure in the project plans. We would like to issue these are challenges to the wider community, for interested developers to investigate. Outlines of the work areas are shown below, they are a guide to the work that could be done, not a comprehensive set of requirements, but show areas of interest.</p><p>We would be very happy to work with developers in any way that is helpful to them. For example the group could:</p><ul><li>Draft a more specific requirements document in accordance with the scope the developer is happy to take on.</li><li>Arrange regular meetings to discuss technical questions and explain the concepts used in previous development work.</li></ul><p>if you are interested please get in touch via <a href="mailto:info@OpenHELM.org" class="external-link" rel="nofollow">info@OpenHELM.org</a>.</p><p><br/></p><h2 id="HELMChallenges-HELMGrammar"><span>HELM Grammar </span></h2><p><span><br/></span></p><p><span>HELM currently does not have a well defined grammar.  While the syntax is defined and grammar is implied, the grammar should be specified in a grammar format file such as the .g4 (LISP) file defined by the <strong>Antlr</strong> open source tool.  This would allow for parser-generators to be created for other languages such as python, C# and Javascript. It would also put structure and documentation on the HELM syntax as it evolves over time.</span></p><p><span> </span></p><p><span>Outcome should be to add HELM to the following grammar library: </span><span><a href="https://github.com/antlr/grammars-v4" class="external-link" rel="nofollow"><u>https://github.com/antlr/grammars-v4</u></a></span></p><p><br/></p><h2 id="HELMChallenges-Fragmentation">Fragmentation</h2><p><br/></p><p>HELM represents biomolecules as polymeric structures, which are composed of monomeric building blocks. Typically, these are collected in a list or database which contains the full chemical graph of each building block alongside with additional data specifying its context in a biomolecule. Such a monomer dictionary is the very foundation of representing biomolecules at an atomic level.</p><p>An often encountered problem within the community when adopting HELM is the migration of legacy molecules, currently predominantly stored in a chemical file format. Based on a given large set of biomolecules a consistent and normalized monomer dictionary needs to be found, which fully represents the space of biomolecules in the given set and satisfies common domain knowledge in terms of the context of each identified monomer. In a next step the generated monomer dictionary would be used to convert biomolecules from a chemical file format into the HELM representation.</p><p>Some work has already been done on peptides by the EBI. Their code relied on Pipeline Pilot and is linked to their internal systems, but is available on request. There is also a limited fragmenter as part of the toolkit.</p><p>Main objectives of this project:</p><p>-          Collate current opinions on what qualifies a (partial) chemical structure as a monomer</p><p>-          Implement rules for fragmenting the chemical graph of a biomolecule into monomers</p><p>-          Attempt to detect the chemical context of all fragments and generate additional data for each monomer accordingly</p><p>-          Define and implement guidelines/best practices for normalization of a monomer dictionary</p><p>-          Produce a valid HELM notation from input biomolecules in the context of the generated monomer dictionary</p><p>-          Automate the entire process of establishing the initial monomer dictionary and file format conversion as much as possible</p><h2 id="HELMChallenges-"> </h2><h2 id="HELMChallenges-Canonicalization">Canonicalization</h2><p><br/></p><p>Specific purposes, e.g registration of biomolecules, require the ability to identify and filter for distinct biomolecules to create a database without redundancies. Typically a single biomolecule can be expressed with more than just one HELM representation. Based on the principles HELM applies to represent a biomolecule, the challenge of generating a canonical representation can be broken down into three main objectives:</p><p>-          Canonicalization of the HELM notation: In the context of a given monomer dictionary, a unique HELM notation string must be generated.</p><p>-          Canonicalization of the monomer dictionary: All monomers of a given monomer dictionary must be independent monomers, i.e. satisfying that the combination of two monomers must not be present in the dictionary as a third monomer within the same context</p><p>-          Canonicalization of the chemical structures within the monomer dictionary: The chemical representation of all monomers in the monomer dictionary must be unique in their given context, i.e. alternative structural tautomers, representations of aromatic rings, ionic forms of certain functional groups and other features considered to yield chemically equivalent structures must not be kept as separate entries in the monomer dictionary.</p><p><br/></p><p>There is some cannonicalisation functionality in the HELM toolkit, but this is limited in scope.</p><p><br/></p><h2 id="HELMChallenges-Search">Search</h2><p><br/></p><p>HELM adopters have a need to search through a repository of HELM strings: either to check for uniqueness, to find similarities, for data retrieval or to answer scientific questions. <br/>One of the limitations of the current toolkit is the lack of a search tool. Given a large set of HELM strings, it is not possible to find matches of a particular term using HELM notation or other descriptors.<br/>It should be possible to search across HELM strings using a variety of formats to retrieve information of interest.</p><p>A Cambridge University student completed a proof of concept search engine in summer 2014 and the code is available on GitHub. This included exact match and substructure searching of atom/bond structures and exact match and substring searching of sequence level information and combinations. There are limited user interface components.</p><p><br/></p><p>Objectives/requirements:</p><ul><li>The data source of the HELM search must be configurable. i.e.: the data can reside in a local file or a database.</li><li>Search for exact match, sub structure or motif search. The input criteria can consist of the following by using AND/OR searches:</li><ul><li>Natural analog sequence (peptides, nucleotides)</li><li>Monomer ID</li><li>HELM string (including inline HELM notation)</li><li>SMILES / SMARTS / Chemical structure drawing tool</li><li>Specific attachment point on monomer. <br/>      Ex: CHEM1,*,1:R1 all attachment to R1 on CHEM1 monomer.</li></ul><li>Fuzzy searches</li><ul><li>Canonicalized vs. not canonicalized HELM (permutation, combination )</li><li>Gap search (*)</li><li>Ambiguities (TBD)</li></ul><li>Component based web service allowing search which is fully configurable</li></ul><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : Annotations and how to use them</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Best-Practices_741670948.html">HELM Best Practices</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : Annotations and how to use them
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span> on Jul 04, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><style>[data-colorid=ijyphuqxyl]{color:#c00000} html[data-color-mode=dark] [data-colorid=ijyphuqxyl]{color:#ff3f3f}[data-colorid=bkmfj7fedh]{color:#c00000} html[data-color-mode=dark] [data-colorid=bkmfj7fedh]{color:#ff3f3f}[data-colorid=cr9jj0bbsl]{color:#c00000} html[data-color-mode=dark] [data-colorid=cr9jj0bbsl]{color:#ff3f3f}[data-colorid=jmyv99y1ns]{color:#c00000} html[data-color-mode=dark] [data-colorid=jmyv99y1ns]{color:#ff3f3f}[data-colorid=ojnmywbegu]{color:#c00000} html[data-color-mode=dark] [data-colorid=ojnmywbegu]{color:#ff3f3f}</style>Annotations can be added to HELM strings in two main ways.</p><h3 id="Annotationsandhowtousethem-In-lineannotations"><strong>In-line annotations</strong></h3><p>In-line annotations are added in the first section and apply to the element that immediately proceeds them. These annotations are simple text and useful to add descriptions to specific parts of the molecule.&nbsp;</p><p><span>&nbsp;</span><strong>Monomer</strong></p><ul><li><span>PEPTIDE1{A.A.C<span data-colorid="bkmfj7fedh">&quot;mutation&quot;</span>.D.E.E}$$$$</span></li></ul><p><strong>Polymer</strong></p><ul><li><span>PEPTIDE1{A.C.D.D.E.F.G}<span data-colorid="ijyphuqxyl">&quot;HC&quot;</span>|PEPTIDE2{G.C.S.S.S.P.K.K.V.K}<span data-colorid="ojnmywbegu">&quot;LC&quot;</span>$$$$</span></li></ul><p><strong>Bond</strong></p><ul><li><span>CHEM1{[SMCC]}|PEPTIDE1{A.A.A.C.D.D.E.E}$PEPTIDE1,CHEM1,C:R3-1:R1<span data-colorid="cr9jj0bbsl">&quot;Specific Conjugation&quot;</span>$$$V2.0</span></li></ul><p><br /></p><h3 id="Annotationsandhowtousethem-Thirdsectionannotations"><strong>Third section annotations</strong></h3><p>These annotations are designed to hold more complex information and can contain any valid JSON. This allows for a wide variety of very precise information to be added to the molecule, but all of it relates to the molecule as a whole.&nbsp;</p><ul><li><span>BLOB1{Bead}$$$<span data-colorid="jmyv99y1ns">{&quot;Name&quot;:&quot;Gold particle conjugated with peptides&quot;,&quot;Load&quot;:26}</span>$V2.0</span></li></ul><p>We would like to work on defining conventions for commonly used information. Please contact the team if you have any suggestions as we are very interested in getting people together to define best practice.&nbsp;</p><p><br /></p><p><strong><em>Titles</em></strong></p><p>If you want to add a title to your HELM molecule we recommend using the annotation (third) section of the HELM string to do this.&nbsp;</p><ul><li><span style="text-decoration: none;" class="legacy-color-text-default">PEPTIDE1{</span><span style="text-decoration: none;" class="legacy-color-text-default">H</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">E</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">L</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">M</span><span style="text-decoration: none;" class="legacy-color-text-default">}$$$</span><span style="text-decoration: none;" class="legacy-color-text-default">{&ldquo;PEPTIDE1&rdquo;:{&ldquo;Title&rdquo;:&rdquo;MyTitle&rdquo;}}</span><span style="text-decoration: none;" class="legacy-color-text-default">$V2.0&nbsp;</span></li></ul><p><br />You should <em><strong>not</strong> </em>add titles to the end of a HELM string like this:</p><p style="margin-left: 30.0px;"><span style="text-decoration: none;" class="legacy-color-text-default">PEPTIDE1{</span><span style="text-decoration: none;" class="legacy-color-text-default">H</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">E</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">L</span><span style="text-decoration: none;" class="legacy-color-text-default">.</span><span style="text-decoration: none;" class="legacy-color-text-default">M</span><span style="text-decoration: none;" class="legacy-color-text-default">}$$$$V2.0 MyTitle.&nbsp;</span></p><p><br /></p><p><br /><br /></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

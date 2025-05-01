@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : Polymer mixtures and alternatives</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Best-Practices_741670948.html">HELM Best Practices</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : Polymer mixtures and alternatives
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span> on Aug 13, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><style>[data-colorid=e2buhoman0]{color:#333333} html[data-color-mode=dark] [data-colorid=e2buhoman0]{color:#cccccc}</style><strong>Groups</strong></p><p>Groups allow you to define molecules or sections of molecules. Once a group is created you can do many things with it - define ambiguous connections, annotate the group or define mixtures. We discuss mixtures and alternatives here.</p><h2 id="Polymermixturesandalternatives-">&nbsp;</h2><p><strong><span data-colorid="e2buhoman0" style="text-decoration: none;">Polymer mixtures</span></strong></p><p>Polymer mixtures consist of more than one unconnected simple polymer. Every simple polymer is an implicit group but here they are organised into a higher-level group.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/1107787879/1107853397.png?width=350" data-image-src="attachments/1107787879/1107853397.png" data-unresolved-comment-count="0" data-linked-resource-id="1107853397" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Polymer Mixture visualization.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1107787879" data-linked-resource-container-version="1" data-media-id="6c10d586-75c9-41df-a9ae-ffecacedbf49" data-media-type="file" /></span></p><p><br /></p><blockquote><p>PEPTIDE1{A.C.D.E.F}|PEPTIDE2{P.Q.R.S.T}</p><p>$$G1(PEPTIDE1+PEPTIDE2)</p><p>$$V2.0</p></blockquote><p>The mixture is defined in the third section:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/1107787879/1107722308.png?width=350" data-image-src="attachments/1107787879/1107722308.png" data-unresolved-comment-count="0" data-linked-resource-id="1107722308" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Polymer Mixtures.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1107787879" data-linked-resource-container-version="1" data-media-id="dae5f4bb-d67e-4416-8cda-f13b51825846" data-media-type="file" /></span></p><p>You can see that the simple polymers are not connected as there is nothing in the second section of the string where the connection information would normally be.</p><h3 id="Polymermixturesandalternatives-.1">&nbsp;</h3><p><strong>Polymer mixtures containing different proportions</strong></p><p>You can also specify how much of each simple polymer is present in the mixture:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/1107787879/1107689555.png?width=350" data-image-src="attachments/1107787879/1107689555.png" data-unresolved-comment-count="0" data-linked-resource-id="1107689555" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Polymer Mixture with ratiosvisualization.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1107787879" data-linked-resource-container-version="1" data-media-id="ca5e6365-dfd6-42f2-a093-9593eed595e5" data-media-type="file" /></span></p><blockquote><p>PEPTIDE1{A.C.D.E.F}|PEPTIDE2{P.Q.R.S.T}</p><p>$$G3(PEPTIDE1:2+PEPTIDE2:3)</p><p>$$V2.0</p></blockquote><p><br /></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/1107787879/1108049925.png?width=350" data-image-src="attachments/1107787879/1108049925.png" data-unresolved-comment-count="0" data-linked-resource-id="1108049925" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Polymer Mixtures with Proportions.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1107787879" data-linked-resource-container-version="1" data-media-id="b254b440-8106-4608-8318-e3f875ff4978" data-media-type="file" /></span></p><p>If the proportions are not specified, then they are assumed to be unknown. Therefore a 1:1 mixture must be specified explicitly.</p><p><br /></p><p><br /></p><p><strong>Probability/alternatives</strong></p><p>If you believe that you only have one substance, however it could be either of two or more alternatives and you don&rsquo;t know which, you can specify this in a similar way.</p><p>In this case, you separate the molecules using a comma. The comma becomes an OR operator.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/1107787879/1107886123.png?width=350" data-image-src="attachments/1107787879/1107886123.png" data-unresolved-comment-count="0" data-linked-resource-id="1107886123" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Polymer Alternatives.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1107787879" data-linked-resource-container-version="1" data-media-id="3d562aa8-38d9-4ce6-8080-9a63454e9ded" data-media-type="file" /></span></p><blockquote><pre>PEPTIDE1{A.C.D.E.F}|PEPTIDE2{P.Q.R.S.T}<br /><br />$$G3(PEPTIDE1:2,PEPTIDE2:3)<br /><br />$$V2.0</pre></blockquote><p><br /></p><p><br /></p><p><br /></p><p><br /></p><p><br /></p><p><br /></p><p><br /></p><p><br /></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1107853397.png">Polymer Mixture visualization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1107886113.png">Polymer Mixtures.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1107689555.png">Polymer Mixture with ratiosvisualization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1108049925.png">Polymer Mixtures with Proportions.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1107722308.png">Polymer Mixtures.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1107787879/1107886123.png">Polymer Alternatives.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

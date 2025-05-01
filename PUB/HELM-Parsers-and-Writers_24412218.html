@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : HELM Parsers and Writers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : HELM Parsers and Writers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span>, last modified on Nov 17, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><p><strong>HELM Parsers and Writers</strong></p><p>Many organisations have macromolecule information in a variety of formats. Converting HELM to an atom/bond molecular representation is a relatively straightforward process since the monomers and attachment points between monomers are defined, so assembly is straightforward.</p><p>Converting an atom/bond representation to HELM is more complex, since you have to decide what the monomers are.</p><p> </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="800" loading="lazy" src="attachments/24412218/26148873.png?width=800" data-image-src="attachments/24412218/26148873.png" data-unresolved-comment-count="0" data-linked-resource-id="26148873" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="polymer to monomers diagram.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24412218" data-linked-resource-container-version="7" data-media-id="be79741b-7d33-42fc-98db-185b618382aa" data-media-type="file"></span></p><p> </p><p>Identifying monomers is not always straightforward. There are decisions about where the backbone actually is which is not always straightforward. See this cyclic peptide as an example:</p><p> </p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" height="250" loading="lazy" src="attachments/24412218/26148874.png?height=250" data-image-src="attachments/24412218/26148874.png" data-unresolved-comment-count="0" data-linked-resource-id="26148874" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Cyclic peptide fragmentation.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24412218" data-linked-resource-container-version="7" data-media-id="cb4d0e78-9812-48ab-a3f4-f8207df90043" data-media-type="file"></span></p><p> </p><p>And there are decisions about capping groups; whether groups such as N-methyl lysine are single monomers or lysine is one monomer and the methyl group a second one.</p><p> </p><p><strong>Free to use toolsets</strong></p><p>The HELM toolkit contains a basic fragmenter, and the EBI has completed some work in this area, details of which would be available from them on request.</p><p> </p><p><strong>RDKit</strong></p><p>RDKit (open source cheminformatics software released under the <a href="https://github.com/rdkit/rdkit/blob/master/license.txt" class="external-link" rel="nofollow">BSD license</a>) now includes HELM readers and writers for peptides courtesy of Roger Sayle of NextMove Software. This adds HELM as a supported format to the existing options of SMILES/SMARTS, SDF, TDT, SLN, Corina mol2 and PDB.</p><p> </p><p>A brief overview can be found in some slides presented at the RDKit 2015 user group meeting – see slides 18-22.</p><p style="margin-left: 30.0px;"><a href="https://github.com/rdkit/UGM_2015/tree/master/Presentations" class="external-link" rel="nofollow">https://github.com/rdkit/UGM_2015/tree/master/Presentations</a></p><p> </p><p>RDKit Github project can be found at:</p><p style="margin-left: 30.0px;"><a href="https://github.com/rdkit/rdkit" class="external-link" rel="nofollow">https://github.com/rdkit/rdkit</a></p><p> </p><p>The specific code is at:</p><p style="margin-left: 30.0px;"><a href="https://github.com/rdkit/rdkit/blob/master/Code/GraphMol/FileParsers/SequenceParsers.cpp" class="external-link" rel="nofollow">rdkit/Code/GraphMol/FileParsers/SequenceParsers.cpp</a></p><p style="margin-left: 30.0px;"><a href="https://github.com/rdkit/rdkit/blob/master/Code/GraphMol/FileParsers/SequenceWriters.cpp" class="external-link" rel="nofollow">rdkit/Code/GraphMol/FileParsers/SequenceWriters.cpp</a></p><p><strong> </strong></p><h3 id="HELMParsersandWriters-Commercialconverters">Commercial converters</h3><p>Below is a list of the commercial conversion tools we are aware of. If you know of or indeed sell a commercial HELM conversion tool, please let us know at <a href="mailto:info@openhelm.org" class="external-link" rel="nofollow">info@openhelm.org</a> and we will add it to this list.</p><p> </p><h4 id="HELMParsersandWriters-NextMoveSoftware&#39;sSugar&amp;Splice.">NextMove Software's Sugar &amp; Splice.</h4><p>Sugar and Splice supports peptides along with DNA/RNA, inline HELM and XHELM [and IUPAC name generation, and depiction, and peptide name generation, and variable attachment points, and oligosaccharides etc.]. Further details can be found at <a href="https://www.nextmovesoftware.com/sugarnsplice.html" class="external-link" rel="nofollow">https://www.nextmovesoftware.com/sugarnsplice.html</a> </p><p> </p><h4 id="HELMParsersandWriters-ChemAxonBiomoleculeToolkit"><span class="legacy-color-text-default">ChemAxon Biomolecule Toolkit </span></h4><p><span class="legacy-color-text-default">ChemAxon provides various conversion utilities from and to HELM within their Biomolecule Toolkit for peptide- and nucleic acid-derived molecules . (<a href="https://www.chemaxon.com/products/biomolecule-toolkit/" class="external-link" rel="nofollow">https://www.chemaxon.com/products/biomolecule-toolkit/</a>)<br/>Supported file formats for exporting include XHELM, FASTA, plain sequences and MDL/Mol files*. Sequences from HELM are generated using the Natural Analogue information of HELM monomers. Mol files will be exported in v3000 format containing S-group abbreviations for each monomer.<br/>Supported file formats for importing include FASTA, plain sequences and MDL/Mol files*. FASTA headers are maintained in the HELM annotation section. Import of Mol files is currently limited to molecules, which are fully represented by a given monomer dictionary. This dictionary may be a fully custom/proprietary one. <br/>Until mid 2016 import of PDB files is expected to become available.<br/><br/>*Other chemical file formats can be converted to MDL Mol-file representation using ChemAxon's Molconvert.</span></p><p> </p><h4 id="HELMParsersandWriters-BioviaPipelinePilot">Biovia Pipeline Pilot</h4><p>Biovia's Pipeline Pilot contains HELM reader and writer components in its chemistry collection. It does not fragment atom/bond representations but can convert sequence-based notations. There is HELM support in some other Biovia tools - see the PDF below for details.</p><p> </p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="attachments/24412218/32538626.pdf" data-nice-type="PDF Document" data-file-src="/wiki/download/attachments/24412218/BIOVIA%20HELM%20Support.pdf?version=1&amp;modificationDate=1454493112011&amp;cacheVersion=1&amp;api=v2" data-linked-resource-id="32538626" data-linked-resource-type="attachment" data-linked-resource-container-id="24412218" data-linked-resource-default-alias="BIOVIA HELM Support.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-media-id="8cd39611-25ef-4363-ad7c-3544686118cc" data-media-type="file"><img src="attachments/thumbnails/24412218/32538626" height="150"/></a></span> </p><p> </p><h4 id="HELMParsersandWriters-Perkin-Elmer&#39;sChemDraw"> Perkin-Elmer's ChemDraw</h4><p>Version 17 of ChemDraw allows you to draw HELM molecules directly using the monomer.org monomer set. A video is available to show you how.  </p><p><br/></p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/07x7K9JL318?wmode=opaque" frameborder="0">
+</iframe>
+    
+.</p><p><br/></p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24412218/24412217.gif">RDKit diagram.gif</a> (image/gif)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24412218/26148873.png">polymer to monomers diagram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24412218/26148874.png">Cyclic peptide fragmentation.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24412218/32538626.pdf">BIOVIA HELM Support.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24412218/308543565.png">ChemDraw.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:28</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

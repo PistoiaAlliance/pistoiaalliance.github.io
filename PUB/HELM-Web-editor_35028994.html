@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Public : HELM Web-editor</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Public</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HELM-Resources_8716303.html">HELM Resources</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Public : HELM Web-editor
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Claire Bellamy</span>, last modified on May 03, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>The HELM web-editor is designed to support organisations that do not wish to deploy a thick client.</span></p><p>The HELM project team is happy to announce the release of the second release of our open source web-editor. This version extends the functionality available to take advantage of developments in the HELM notation.</p><p><strong>New functionality includes:</strong></p><p>The ability to create molecules with the following HELM 2 features:</p><ul><li>Unknown sections of or entire polymers</li><li>Repeating units</li><li>Annotations</li><li>Unknown connection points</li><li>Multiple possible connection points</li><li>Probabilities of different monomers or polymers</li><li>Mixtures</li></ul><p>A monomer manager<br/>A rule manager</p><p><span><br/></span></p><p style="text-align: center;"><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" loading="lazy" src="attachments/35028994/96621413.png?height=400" data-image-src="attachments/35028994/96621413.png" data-unresolved-comment-count="0" data-linked-resource-id="96621413" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2017-1-29_14-3-5.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="35028994" data-linked-resource-container-version="21" data-media-id="27366200-8f23-4f45-9adb-e7c82e35f5b6" data-media-type="file"></span><br/></strong></p><h3 id="HELMWeb-editor-Trialversion"><strong>Trial version</strong></h3><p><span>A demo version is available for you to try the functionality. Please note that this is for trial use only, if you want to use it in a production environment please take the code and deploy it on your own servers. </span></p><p style="margin-left: 30.0px;"><span class="legacy-color-text-default"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__webeditor.openhelm.org_hwe_examples_App.htm&amp;d=DwMFaQ&amp;c=UE1eNsedaKncO0Yl_u8bfw&amp;r=dYgo18NmhNfBzcUMyDzBnpMzjQVXCNO9nk7dOTLdowc&amp;m=EatZg-0KscvL5tTYS8Yvhz2wJUh_x1PtBf2vq_UjyQY&amp;s=Y-o5iGXl8mE6NH_njDIkMZLSBAooQQ8dHasyEzMTOV0&amp;e=" class="external-link" rel="nofollow">http://webeditor.openhelm.org/hwe/examples/App.htm</a> </span></p><p><span>The demo web-editor uses the monomer set supplied with the old HELM editor. However, the code includes both this and an alternative set curated by Ionis with a larger range of nucleotide monomers.</span></p><p><span>The demo monomer manager allows user to add, delete and edit monomers, something you will want to restrict inside an organisation! Public use means the original set is likely to change over time. We will keep an eye on this and reset back to the original monomers every now and then. Please be aware when using!</span></p><h3 id="HELMWeb-editor-Userguide"><strong>User guide</strong></h3><p><span>A user guide is available</span></p><p><span> </span></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="attachments/35028994/621805592.pdf" data-nice-type="PDF Document" data-file-src="/wiki/download/attachments/35028994/User_Guide_for_the_HELM_Editor_II.pdf?version=1&amp;modificationDate=1520269498078&amp;cacheVersion=1&amp;api=v2" data-linked-resource-id="621805592" data-linked-resource-type="attachment" data-linked-resource-container-id="35028994" data-linked-resource-default-alias="User_Guide_for_the_HELM_Editor_II.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-media-id="1f89d445-02b0-44e7-80e4-ef58394fe199" data-media-type="file"><img src="attachments/thumbnails/35028994/621805592" height="250"/></a></span></p><h3 id="HELMWeb-editor-Architecture">Architecture</h3><p>The project has taken a modular approach to the architecture. The diagram below shows the components, each of which can be found in their own repository. <br/>You can use either CDK or Marvin, but do not need both.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/35028994/621903900.png?height=250" data-image-src="attachments/35028994/621903900.png" data-unresolved-comment-count="0" data-linked-resource-id="621903900" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="ArchitectureOverview.png" data-base-url="https://pistoiaalliance.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="35028994" data-linked-resource-container-version="21" data-media-id="7b4b4483-20f3-47eb-98e2-f8c6196e8ed5" data-media-type="file"></span></p><h3 id="HELMWeb-editor-SourceCode"><strong><span>Source Code</span></strong></h3><p>All HELM code is published in <a href="https://github.com/PistoiaHELM" class="external-link" rel="nofollow">GitHub</a>.</p><p><span>The web-editor code is at</span><span>: </span><a href="https://github.com/PistoiaHELM/HELMWebEditor" class="external-link" rel="nofollow"><span>https://github.com/PistoiaHELM/HELMWebEditor</span></a><span>. </span></p><p>The webeditor Javascript code will be available in NPM soon.</p><p><br/></p><h3 id="HELMWeb-editor-Installation">Installation</h3><p>An installation guide is available in the readme file at <a href="https://github.com/PistoiaHELM/HELMWebEditor" class="external-link" rel="nofollow">https://github.com/PistoiaHELM/HELMWebEditor</a></p><p>Compiled code for the Java components is available in Nexus <a href="https://oss.sonatype.org/#nexus-search;quick~org.pistoiaalliance.helm" class="external-link" rel="nofollow">https://oss.sonatype.org/#nexus-search;quick~org.pistoiaalliance.helm</a> which provides an easy way to manage the dependencies.</p><p><br/></p><h4 id="HELMWeb-editor-Licensesandrestrictions"><span>Licenses and restrictions</span></h4><p><span>HELM is an open source project and all components are released under the <a href="http://opensource.org/licenses/MIT" class="external-link" rel="nofollow"><u>MIT license</u></a>. </span></p><ul><li><span><span>HELM Web Editor license: <a href="https://github.com/PistoiaHELM/HELMWebEditor/blob/master/LICENSE" class="external-link" rel="nofollow">https://github.com/PistoiaHELM/HELMWebEditor/blob/master/LICENSE</a> </span><br class="_mce_tagged_br"/></span></li></ul><p><span><br/></span></p><p><span>The HELM web-editor has some dependencies on third party tools, all of which are open-source. Details of their licences are below:</span></p><p style="margin-left: 30.0px;"><strong>JSDraw.Lite </strong></p><ul><li style="list-style-type: none;background-image: none;"><ul><li><span><span>code available at <a href="https://github.com/scilligence/JSDraw.Lite" class="external-link" rel="nofollow"><span><u>https://github.com/scilligence/JSDraw.Lite</u></span></a></span></span></li><li><span>released under LGPL 3.0: </span><span><a href="https://opensource.org/licenses/LGPL-3.0" class="external-link" rel="nofollow"><span><u>https://opensource.org/licenses/LGPL-3.0</u></span></a></span></li></ul></li></ul><p style="margin-left: 30.0px;"><span><strong>dojo toolkit</strong> </span></p><ul><li style="list-style-type: none;background-image: none;"><ul><li><span>code available at <span><a href="https://dojotoolkit.org/" class="external-link" rel="nofollow"><span><u>https://dojotoolkit.org/</u></span></a></span></span></li><li><span>released under AFL and BSD licenses <a href="https://dojotoolkit.org/license.html" class="external-link" rel="nofollow"><span><u>https://dojotoolkit.org/license.html</u></span></a></span></li></ul></li></ul><p style="margin-left: 30.0px;"><span><strong>pako.js</strong> </span></p><ul><li style="list-style-type: none;background-image: none;"><ul><li><span>code available at <span><a href="https://github.com/nodeca/pako" class="external-link" rel="nofollow"><span><u>https://github.com/nodeca/pako</u></span></a></span> </span></li><li><span>released under MIT licence: </span><span><a href="https://github.com/nodeca/pako/blob/master/LICENSE" class="external-link" rel="nofollow"><span><u>https://github.com/nodeca/pako/blob/master/LICENSE</u></span></a></span></li></ul></li></ul><p><span> </span></p><p><span> </span></p><p><span><br/></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/35028996.pptx">HELM2NotationToolkit_Codeoverview.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/41779209.png">Super_Example_Helm2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/41779205.png">Toolkit update architechture diagram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/41779206.docx">HELM2.docx</a> (application/vnd.openxmlformats-officedocument.wordprocessingml.document)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/41779207.doc">HELM Specification 2_1.doc</a> (application/msword)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/41779204.png">Super_Example_Helm2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/51577018.doc">HELM Specification 2_01.doc</a> (application/msword)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/96450186.png">Capture.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/96621337.pdf">User Guide for the HELM Web Editor V 1_0.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/96621413.png">image2017-1-29_14-3-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/96768987.png">image2017-2-2_15-44-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/96769014.png">image2017-2-2_15-48-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/621805592.pdf">User_Guide_for_the_HELM_Editor_II.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35028994/621903900.png">ArchitectureOverview.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on May 01, 2025 12:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
